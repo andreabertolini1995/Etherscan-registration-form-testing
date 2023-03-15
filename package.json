@@ -4,7 +4,7 @@
   "description": "Testing the Etherscan Registration form 1.\tCreate TEST SCENARIOS for the registration form on Etherscan website (https://etherscan.io/register) 2.\tExplain what type of tools you would use to enable an automatic testing system for the task above and how they would be utilized. 3.\tCreate E2E browser tests that will cover all test scenarios",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js"
+    "test": "cucumber-js -f @cucumber/pretty-formatter"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,10 @@
   "homepage": "https://github.com/andreabertolini1995/Etherscan-registration-form-testing#readme",
   "devDependencies": {
     "@cucumber/cucumber": "^9.0.0",
+    "@cucumber/pretty-formatter": "latest",
     "hamjest": "^3.7.3"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.8.1"
   }
 }
