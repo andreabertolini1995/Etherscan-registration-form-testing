@@ -23,6 +23,7 @@
     "hamjest": "^3.7.3"
   },
   "dependencies": {
+    "mocha": "^10.2.0",
     "selenium-webdriver": "^4.8.1"
   }
 }

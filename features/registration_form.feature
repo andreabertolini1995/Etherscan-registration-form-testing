@@ -20,12 +20,27 @@ Feature: Testing the registration form
 
         Scenario: Username does not only contain alphanumeric characters (done)
 
+    
+    Rule: Registration is successful only if user enters a valid email address (to understand how to define it)
+
+        Scenario: User does not enter a valid email address
+
+        Scenario: User enters a valid email address
+
 
     Rule: Registration is successful only if the same email is inserted twice
 
         Scenario: Wrong email is inserted for confirmation
+            Given a user with email address andre.berto95@gmail.com
+            When the user enters the email address
+            And the user enters andre.berto95@gmail.com as the email confirmation
+            And the email address is different than the confirmation
+            Then there is an error message
 
         Scenario: Correct email is inserted for confirmation
+
+    
+    Rule: Registration is successful only if the email address has been verified
 
         Scenario: The confirmation code is sent to the email address
 

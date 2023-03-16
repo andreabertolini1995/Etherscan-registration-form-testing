@@ -14,3 +14,9 @@ When("the user tries to register on Etherscan", function () {
 Then("the user should be forbidden to register", function () {
   return "pending";
 });
+
+// Rule: Registration is successful only if the same email is inserted twice
+
+Given("a user with email address {word}", function () {
+  user = new User();
+});
