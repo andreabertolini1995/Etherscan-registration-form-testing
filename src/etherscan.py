@@ -17,28 +17,35 @@ def initialize_driver():
     return driver
 
 class User:
-    def __init__(self, username, email_address, password, email_confirmation):
+    def __init__(self, username=None, email_address=None, password=None):
         self.username = username
         self.email_address = email_address
-        self.email_confirmation = email_confirmation
         self.password = password
         self.driver = initialize_driver()
 
-    def insert_username(self, driver):
-        username = driver.find_element(by=By.NAME, value="ctl00$ContentPlaceHolder1$txtUserName")
-        time.sleep(2)
+    def insert_username(self):
+        username = self.driver.find_element(by=By.NAME, value="ctl00$ContentPlaceHolder1$txtUserName")
+        time.sleep(1)
         username.send_keys(self.username)
 
-    def insert_email_address(self, driver):
-        driver = initialize_driver()
-        email_address = driver.find_element(by=By.NAME, value="tl00$ContentPlaceHolder1$txtEmail")
-        time.sleep(2)
+    def insert_email_address(self):
+        email_address = self.driver.find_element(by=By.NAME, value="ctl00$ContentPlaceHolder1$txtEmail")
+        time.sleep(1)
         email_address.send_keys(self.email_address)
 
-    def insert_email_confirmation(self, driver):
-        driver = initialize_driver()
-        email_confirmation = driver.find_element(by=By.NAME, value="tl00$ContentPlaceHolder1$txtEmail")
-        time.sleep(2)
-        email_confirmation.send_keys(self.email_confirmation)
+    def insert_email_confirmation(self, email_confirmation):
+        confirm_email_address = self.driver.find_element(by=By.NAME, value="ctl00$ContentPlaceHolder1$txtConfirmEmail")
+        time.sleep(1)
+        confirm_email_address.send_keys(email_confirmation)
+    
+    def insert_password(self):
+        password = self.driver.find_element(by=By.NAME, value=f"ctl00$ContentPlaceHolder1$txtPassword")
+        time.sleep(1)
+        password.send_keys(self.password)
+
+    def confirm_password(self, password_confirmation):
+        confirm_password = self.driver.find_element(by=By.NAME, value=f"ctl00$ContentPlaceHolder1$txtPassword2")
+        time.sleep(1)
+        confirm_password.send_keys(password_confirmation)
 
 

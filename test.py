@@ -23,8 +23,7 @@ def wrong_username_length():
     username = driver.find_element(by=By.NAME, value="ctl00$ContentPlaceHolder1$txtUserName")
     time.sleep(2)
 
-    # password = driver.find_element(by=By.NAME, value=f"{placeholder}txtPassword")
-    # confirm_password = driver.find_element(by=By.NAME, value=f"{placeholder}txtPassword2")
+
     # terms_conditions = driver.find_element(by=By.NAME, value=f"{placeholder}MyCheckBox")
     # newsletter = driver.find_element(by=By.NAME, value=f"{placeholder}SubscribeNewsletter")
     # check_robot = driver.find_element(by=By.CLASS_NAME, value="g-recaptcha")
@@ -67,12 +66,12 @@ def wrong_username_characters():
 def email_is_confirmed():
 
     driver = initialize_driver()
-    email_address = driver.find_element(by=By.NAME, value="tl00$ContentPlaceHolder1$txtEmail")
-    confirm_email_address = driver.find_element(by=By.NAME, value=f"tl00$ContentPlaceHolder1$txtConfirmEmail")
+    email_address = driver.find_element(by=By.NAME, value="ctl00$ContentPlaceHolder1$txtEmail")
+    confirm_email_address = driver.find_element(by=By.NAME, value=f"ctl00$ContentPlaceHolder1$txtConfirmEmail")
     time.sleep(2)
     email_address.send_keys("andre.berto95@gmail.com")
     time.sleep(2)
-    confirm_email_address.send_keys("andre.berto95@gmail")
+    confirm_email_address.send_keys("andre.berto95@gmail.com")
     time.sleep(2)
     confirm_email_error = driver.find_element(by=By.ID, value="ContentPlaceHolder1_txtConfirmEmail-error")
     assert confirm_email_error.text == ""
@@ -82,29 +81,36 @@ def email_is_confirmed():
 def email_is_not_confirmed():
 
     driver = initialize_driver()
-    email_address = driver.find_element(by=By.NAME, value="tl00$ContentPlaceHolder1$txtEmail")
-    confirm_email_address = driver.find_element(by=By.NAME, value=f"tl00$ContentPlaceHolder1$txtConfirmEmail")
+    email_address = driver.find_element(by=By.NAME, value="ctl00$ContentPlaceHolder1$txtEmail")
+    confirm_email_address = driver.find_element(by=By.NAME, value=f"ctl00$ContentPlaceHolder1$txtConfirmEmail")
     time.sleep(2)
     email_address.send_keys("andre.berto95@gmail.com")
     time.sleep(2)
-    confirm_email_address.send_keys("andre.berto97@gmail")
+    confirm_email_address.send_keys("andre.berto97@gmail.com")
     time.sleep(2)
     confirm_email_error = driver.find_element(by=By.ID, value="ContentPlaceHolder1_txtConfirmEmail-error")
     assert confirm_email_error.text == "Email address does not match."
     time.sleep(2)
     driver.quit()
+
+def click_submit_button():
+    
+    driver = initialize_driver()
+    create_account_button = driver.find_element(by=By.NAME, value=f"ctl00$ContentPlaceHolder1$btnRegister")
+    create_account_button.click()
     
 if __name__ == '__main__':
 
     # Username checks
-    wrong_username_length()
-    wrong_username_characters()
-    correct_username()
+    # wrong_username_length()
+    # wrong_username_characters()
+    # correct_username()
 
     # Email address checks
-    email_is_confirmed()
-    email_is_not_confirmed()
+    # email_is_confirmed()
+    # email_is_not_confirmed()
 
+    click_submit_button()
 
 
 
