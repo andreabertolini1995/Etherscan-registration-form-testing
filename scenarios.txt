@@ -1,8 +1,6 @@
 Feature: Testing the registration form
 
-    Rule: Registration is successful if user fills all the mandatory blank spaces
-
-
+    Rule: Registration is successful if user fills all the mandatory blank spaces (DONE)
 
     Rule: Registration is successful only if username is from 5 to 30 characters in length and only contains alphanumeric characters (DONE)
 
@@ -16,17 +14,8 @@ Feature: Testing the registration form
 
     Rule: Registration is successful only if the user proves not to be a robot (DONE)
 
+    Rule: Registration is successful only if user enters a valid email address (DONE)
 
-
-
-    
-    Rule: Registration is successful only if user enters a valid email address (to understand how to define it)
-
-        Scenario: User does not enter a valid email address
-
-        Scenario: User enters a valid email address
-
-    
     
     Rule: Registration is successful if user does not have already an Etherscan account
 
@@ -36,15 +25,3 @@ Feature: Testing the registration form
             Then the user should be forbidden to register
 
         Scenario: User has already an Etherscan account
-
-    
-    Rule: Registration is successful only if the email address has been verified
-
-        Scenario: The confirmation code is sent to the email address
-
-        Scenario: The confirmation code is not sent to the email address
-
-        Scenario: The user does not verify the confirmation email
-
-        Scenario: The user verifies the confirmation email
-

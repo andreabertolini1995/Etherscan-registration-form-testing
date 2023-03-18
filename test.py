@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service as ChromeService
+from src.etherscan import User
 
 def initialize_driver():
     
@@ -67,7 +68,7 @@ def email_is_confirmed():
 
     driver = initialize_driver()
     email_address = driver.find_element(by=By.NAME, value="ctl00$ContentPlaceHolder1$txtEmail")
-    confirm_email_address = driver.find_element(by=By.NAME, value=f"ctl00$ContentPlaceHolder1$txtConfirmEmail")
+    confirm_email_address = driver.find_element(by=By.NAME, value="ctl00$ContentPlaceHolder1$txtConfirmEmail")
     time.sleep(2)
     email_address.send_keys("andre.berto95@gmail.com")
     time.sleep(2)
@@ -82,7 +83,7 @@ def email_is_not_confirmed():
 
     driver = initialize_driver()
     email_address = driver.find_element(by=By.NAME, value="ctl00$ContentPlaceHolder1$txtEmail")
-    confirm_email_address = driver.find_element(by=By.NAME, value=f"ctl00$ContentPlaceHolder1$txtConfirmEmail")
+    confirm_email_address = driver.find_element(by=By.NAME, value="ctl00$ContentPlaceHolder1$txtConfirmEmail")
     time.sleep(2)
     email_address.send_keys("andre.berto95@gmail.com")
     time.sleep(2)
@@ -96,7 +97,7 @@ def email_is_not_confirmed():
 def click_submit_button():
     
     driver = initialize_driver()
-    create_account_button = driver.find_element(by=By.NAME, value=f"ctl00$ContentPlaceHolder1$btnRegister")
+    create_account_button = driver.find_element(by=By.NAME, value="ctl00$ContentPlaceHolder1$btnRegister")
     create_account_button.click()
     
 if __name__ == '__main__':
@@ -110,9 +111,10 @@ if __name__ == '__main__':
     # email_is_confirmed()
     # email_is_not_confirmed()
 
-    click_submit_button()
+    # click_submit_button()
 
-
+    user = User()
+    print(user.driver())
 
 
 
