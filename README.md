@@ -27,7 +27,8 @@ The step definitions of this project had to reproduce the behavior of a user try
  
 To run a test, follow the next steps:
 * Clone the current Git repository
-<code>https://github.com/andreabertolini1995/Etherscan-registration-form-testing.git</code>
+
+<code>git clone https://github.com/andreabertolini1995/Etherscan-registration-form-testing.git</code>
 
 
 
