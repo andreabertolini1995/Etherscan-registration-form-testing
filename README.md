@@ -15,7 +15,7 @@ Test scenarios or test cases are a document with steps to be completed as planne
 
 Test scenarios are written in [Gherkin](https://cucumber.io/docs/gherkin/), a plain-text language with a simple structure. It is designed to be easy to learn by non-programmers, yet structured enough to allow concise description of test scenarios and examples to illustrate business rules in most real-world domains. 
 
-In a Cucumber project, test scenarios are contained in <em>feature<em> files, where they are described in descriptive language (like English). With regard to this task, I have created two separated feature files:
+In a Cucumber project, test scenarios are contained in <em>feature</em> files, where they are described in descriptive language (like English). With regard to this task, I have created two separated feature files:
  * [form_entries.feature](https://github.com/andreabertolini1995/Etherscan-registration-form-testing/blob/main/features/form_entries.feature) contains the test scenarios to test the individual entries of the Etherscan registration form
  * [signuo.feature](https://github.com/andreabertolini1995/Etherscan-registration-form-testing/blob/main/features/signup.feature) contains the test scenarios to test actual action of registration from the user once the form has been properly filled.
  
@@ -23,7 +23,7 @@ Each scenario should test only one business rule and usually contain multiple **
  
 ### End-to-end Browser Tests
  
-The step definitions of this project had to reproduce the behavior of a user trying to sign up through the Etherscan registration form, which is a common <em>browser test<em>. The testing framework used for this task to enable E2E browser testing is [Selenium Webdrvier](https://www.selenium.dev/documentation/webdriver/). Selenium is amongst the most popular frameworks to test websites, it is open-source and also has good documentation. 
+The step definitions of this project had to reproduce the behavior of a user trying to sign up through the Etherscan registration form, which is a common <em>browser test</em>. The testing framework used for this task to enable E2E browser testing is [Selenium Webdrvier](https://www.selenium.dev/documentation/webdriver/). Selenium is amongst the most popular frameworks to test websites, it is open-source and also has good documentation. 
  
 
 
