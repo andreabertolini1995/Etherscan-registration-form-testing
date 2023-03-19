@@ -5,7 +5,7 @@
 The goal of this project is to create **test scenarios** for the registration form on Etherscan website, create **E2E browser tests** to cover all test scenarios and justify the choice of the tools that have been used for the automatic testing.
 
 
-### Test scenarios
+## Test scenarios
  
 Test scenarios or test cases are a document with steps to be completed as planned out ahead of time. The testing framework I have chosen to outline the test scenarios for this application is [Cucumber](https://cucumber.io/). Cucumber is well documented and it encourages collaboration among developers, quality assurance experts, and customer representatives in a software project through [behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development) (BDD).
 
@@ -21,7 +21,7 @@ In a Cucumber project, test scenarios are contained in <em>feature</em> files, w
  
 Each scenario should test only one business rule and it usually contains multiple **steps**, each of which is linked to a Python expression (or step definitions) which is the code-equivalent of the step, and gets executed when Cucumber executes its associated Gherkin step in a scenario. All the step definitions for this task are contained in the [steps](https://github.com/andreabertolini1995/Etherscan-registration-form-testing/tree/main/features/steps) folder.
  
-### End-to-end Browser Tests
+## End-to-end Browser Tests
  
 The step definitions of this project had to reproduce the behavior of a user trying to sign up through the Etherscan registration form, which is a common <em>browser test</em>. The testing framework used for this task to enable E2E browser testing is [Selenium Webdrvier](https://www.selenium.dev/documentation/webdriver/). Selenium is amongst the most popular frameworks to test websites, it is open-source and also has good documentation. 
  
