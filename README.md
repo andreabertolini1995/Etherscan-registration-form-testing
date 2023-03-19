@@ -19,7 +19,7 @@ In a Cucumber project, test scenarios are contained in <em>feature</em> files, w
  * [form_entries.feature](https://github.com/andreabertolini1995/Etherscan-registration-form-testing/blob/main/features/form_entries.feature) contains the test scenarios to test the individual entries of the Etherscan registration form
  * [signuo.feature](https://github.com/andreabertolini1995/Etherscan-registration-form-testing/blob/main/features/signup.feature) contains the test scenarios to test actual action of registration from the user once the form has been properly filled.
  
-Each scenario should test only one business rule and usually contain multiple **steps**, each of which is linked to a Python expression (or step definitions) which is the code-equivalent of the step, and gets executed when Cucumber executes its associated Gherkin step in a scenario. All the step definitions for this task are contained in the [steps](https://github.com/andreabertolini1995/Etherscan-registration-form-testing/tree/main/features/steps) folder.
+Each scenario should test only one business rule and it usually contains multiple **steps**, each of which is linked to a Python expression (or step definitions) which is the code-equivalent of the step, and gets executed when Cucumber executes its associated Gherkin step in a scenario. All the step definitions for this task are contained in the [steps](https://github.com/andreabertolini1995/Etherscan-registration-form-testing/tree/main/features/steps) folder.
  
 ### End-to-end Browser Tests
  
