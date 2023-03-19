@@ -1,58 +1,77 @@
-Feature: Testing the Etherscan registration form individual entries
+Feature: Testing the indvidual entries of the Etherscan registration form
 
         Background: User goes to the Etherscan registration form
             Given a user on the Etherscan registration form
 
-    # Rule: Username must be from 5 to 30 characters in length and containing only alphanumeric characters
-        Scenario: Username is not from 5 to 30 characters in length
-            When the user enters "John" as "UserName"
-            Then the user sees a "UserName-error" message saying "Please enter at least 5 characters."
+        @wrong_format
+        Scenario Outline: Entries are insterted in the wrong format
+            When the user enters <value> as <field>
+            Then the user sees a <error_type> message saying <error_message>
+
+        Examples: Username is less than 5 characters long and/or it does not only contain alphanumeric characters 
+        | value            | field     | error_type      | error_message                         |
+        | John             | UserName  | UserName-error  | Please enter at least 5 characters.   |
+        | Andrea_Bertolini | UserName  | UserName-error  | Only alphanumeric characters allowed. |
+
+        # Email address is valid if in the form: (anything)@(alphanumeric)
+        Examples: Email address is not valid 
+        | value            | field     | error_type   | error_message                         |
+        | andreagmail.com  | Email     | Email-error  | Please enter a valid email address.   |
+        | andrea@+-.com    | Email     | Email-error  | Please enter a valid email address.   |
+        | /@_.com          | Email     | Email-error  | Please enter a valid email address.   |
+
+        Examples: Password is more than 8 characters long
+        | value            | field     | error_type      | error_message                                     |
+        | test             | Password  | Password-error  | Your password must be at least 8 characters long. |
+
         
-        Scenario: Username does not only contain alphanumeric characters
-            When the user enters "Andrea_Bertolini" as "UserName"
-            Then the user sees a "UserName-error" message saying "Only alphanumeric characters allowed."
+        @correct_format
+        Scenario Outline: Entries are inserted in the correct format
+            When the user enters <value> as <field>
+            Then there is no <error_type> message 
 
-        Scenario: Username is from 5 to 30 characters in length and only contains alphanumeric characters
-            When the user enters "Andrea" as "UserName"
-            Then there is no "UserName-error" message
+        Examples: Username is between 5 and 30 characters long and it only contains alphanumeric characters 
+        | value       | field     | error_type      |
+        | Andrea      | UserName  | UserName-error  |
+        | TestUser98  | UserName  | UserName-error  |
 
-    # Rule: Email address must be valid --> in the form (anything)@(alphanumeric).(alhpanumeric)
-        Scenario: User inserts an invalid email address
-            When the user enters "andreagmail.com" as "Email"
-            Then the user sees a "Email-error" message saying "Please enter a valid email address."
+        Examples: Email address is valid
+        | value              | field  | error_type   |
+        | andrea@gmail.com   | Email  | Email-error  |
+        | _@andrea.42        | Email  | Email-error  |
 
-        Scenario: User inserts a valid email address
-            When the user enters "andrea@gmail.com" as "Email"
-            Then there is no "Email-error" message
+        Examples: Password is at least 8 characters long
+        | value          | field     | error_type      |
+        | testpassword   | Password  | Password-error  |
+        | 12345678       | Password  | Password-error  |
 
-    # Rule: Email address must be correctly confirmed
-        Scenario: Wrong email is inserted for confirmation
-            When the user enters "andre.berto95@gmail.com" as "Email"
-            And the user enters "andre.berto98@gmail.com" as "ConfirmEmail"
-            Then the user sees a "ConfirmEmail-error" message saying "Email address does not match."
-
-        Scenario: Correct email is inserted for confirmation
-            When the user enters "andre.berto95@gmail.com" as "Email"
-            And the user enters "andre.berto95@gmail.com" as "ConfirmEmail"
-            Then there is no "ConfirmEmail-error" message
-
-    #Rule: Password must be at least 8 characters long
-        @current
-        Scenario: Password is less than 8 characters long
-            When the user enters "test" as "Password"
-            Then the user sees a "Password-error" message saying "Your password must be at least 8 characters long."
-
-        Scenario: Password is at least 8 characters long
-            When the user enters "testpassword" as "Password" 
-            Then there is no "Password-error" message
-
-    # Rule: Password must be correctly confirmed
-        Scenario: Wrong password is inserted for confirmation
-            When the user enters "password" as "Password" 
-            And the user enters "another password" as "Password2" 
-            Then the user sees a "Password2-error" message saying "Password does not match, please check again."
         
-        Scenario: Correct password is inserted for confirmation
-            When the user enters "password" as "Password" 
-            And the user enters "password" as "Password2" 
-            Then there is no "Password2-error" message
+        @wrong_confirmation
+        Scenario Outline: Wrong entries are inserted for confirmation
+            When the user enters <value> as <field>
+            And the user enters <confirmation> as <confirmation_field>
+            Then the user sees a <error_type> message saying <error_message>
+        
+        Examples: Wrogn email confirmation
+        | value                   | field  | confirmation             | confirmation_field       | error_type          | error_message                   | 
+        | andre.berto95@gmail.com | Email  | andre.berto98@gmail.com  | ConfirmEmail             | ConfirmEmail-error  | Email address does not match.   |
+
+        Examples: Wrong password confirmation
+        | value    | field    | confirmation      | confirmation_field   | error_type       | error_message                                 | 
+        | password | Password | another password  | Password2            | Password2-error  | Password does not match, please check again.  |
+
+        
+        @correct_confirmation
+        Scenario Outline: Correct entries are inserted for confirmation
+            When the user enters <value> as <field>
+            And the user enters <confirmation> as <confirmation_field>
+            Then there is no <error_type> message
+
+        Examples: Correct email confirmation
+        | value                   | field  | confirmation             | confirmation_field       | error_type          |
+        | andre.berto95@gmail.com | Email  | andre.berto95@gmail.com  | ConfirmEmail             | ConfirmEmail-error  |
+
+        Examples: Correct password confirmation
+        | value     | field     | confirmation  | confirmation_field   | error_type       |
+        | password  | Password  | password      | Password2            | Password2-error  |
+
