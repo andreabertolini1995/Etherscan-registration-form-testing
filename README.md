@@ -25,7 +25,9 @@ Each scenario should test only one business rule and it usually contains multipl
  
 The step definitions of this project had to reproduce the behavior of a user trying to sign up through the Etherscan registration form, which is a common <em>browser test</em>. The testing framework used for this task to enable E2E browser testing is [Selenium Webdrvier](https://www.selenium.dev/documentation/webdriver/). Selenium is amongst the most popular frameworks to test websites, it is open-source and also has good documentation. 
  
-
+To run a test, follow the next steps:
+* Clone the current Git repository
+<code>https://github.com/andreabertolini1995/Etherscan-registration-form-testing.git</code>
 
 
 
