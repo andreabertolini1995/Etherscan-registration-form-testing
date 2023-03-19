@@ -9,6 +9,8 @@ The goal of this project is to create **test scenarios** for the registration fo
  
 Test scenarios or test cases are a document with steps to be completed as planned out ahead of time. The testing framework I have chosen to outline the test scenarios for this application is [Cucumber](https://cucumber.io/). Cucumber is well documented and it encourages collaboration among developers, quality assurance experts, and customer representatives in a software project through [behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development) (BDD).
 
+![Cucumber](images/cucumber.png)
+
 Test scenarios are written in [Gherkin](https://cucumber.io/docs/gherkin/), a plain-text language with a simple structure. It is designed to be easy to learn by non-programmers, yet structured enough to allow concise description of test scenarios and examples to illustrate business rules in most real-world domains. 
 
 In a Cucumber project, test scenarios are contained in <em>feature<em> files, where they are described in descriptive language (like English). With regard to this task, I have created two separated feature files:
