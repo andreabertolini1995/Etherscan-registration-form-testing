@@ -28,17 +28,23 @@ The step definitions of this project had to reproduce the behavior of a user try
 To run a test, follow the next steps:
 * Clone the current Git repository
 
-<code>git clone https://github.com/andreabertolini1995/Etherscan-registration-form-testing.git</code>
+```
+git clone https://github.com/andreabertolini1995/Etherscan-registration-form-testing.git
+```
 
 * Be sure you have installed the packages listed in the [requirements](https://github.com/andreabertolini1995/Etherscan-registration-form-testing/blob/main/requirements.txt):
 
-    behave==1.2.6
-    selenium==4.8.2
-    webdriver-manager==3.8.5
+```
+behave==1.2.6
+selenium==4.8.2
+webdriver-manager==3.8.5
+```
 
 * Each test scenario is identified by an individual tag, so that it can be run independently from the others. Following, an example:
 
-<code>behave --tags==conditions_not_accepted</code>
+```
+behave --tags==conditions_not_accepted
+```
 
 * Finally, the automated test doing its job:
 
