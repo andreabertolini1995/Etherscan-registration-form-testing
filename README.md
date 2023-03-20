@@ -30,6 +30,12 @@ To run a test, follow the next steps:
 
 <code>git clone https://github.com/andreabertolini1995/Etherscan-registration-form-testing.git</code>
 
+ <html>
+      <head>
+       git clone https://github.com/andreabertolini1995/Etherscan-registration-form-testing.git
+      </head>
+    </html>
+
 
 
 
