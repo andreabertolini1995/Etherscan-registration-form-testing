@@ -34,6 +34,8 @@ To run a test, follow the next steps:
 
 <code>behave --tags==conditions_not_accepted</code>
 
+* Finally, the automated test doing its job:
+
 
 
 
