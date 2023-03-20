@@ -32,20 +32,15 @@ To run a test, follow the next steps:
 
 * Be sure you have installed the packages listed in the [requirements](https://github.com/andreabertolini1995/Etherscan-registration-form-testing/blob/main/requirements.txt):
 
-<code> 
- behave==1.2.6
-selenium==4.8.2
-webdriver-manager==3.8.5
- </code>
+    behave==1.2.6
+    selenium==4.8.2
+    webdriver-manager==3.8.5
 
 * Each test scenario is identified by an individual tag, so that it can be run independently from the others. Following, an example:
 
 <code>behave --tags==conditions_not_accepted</code>
 
 * Finally, the automated test doing its job:
-
-
-
 
 https://user-images.githubusercontent.com/51784826/226219811-ca162d36-afcb-4933-852f-c24801c34da7.mp4
 
