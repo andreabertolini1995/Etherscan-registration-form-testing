@@ -30,7 +30,7 @@ To run a test, follow the next steps:
 
 <code>git clone https://github.com/andreabertolini1995/Etherscan-registration-form-testing.git</code>
 
-* Each test scenario is identified by an individual tag, so that it can be run independently from the others. As an example, the following line will run only the scenario with the tag <code>@conditions_not_accepted</code>:
+* Each test scenario is identified by an individual tag, so that it can be run independently from the others. Following, an example:
 
 <code>behave --tags==conditions_not_accepted</code>
 
