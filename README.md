@@ -36,6 +36,9 @@ To run a test, follow the next steps:
 
 * Finally, the automated test doing its job:
 
+<video align="center">
+  <source="https://github.com/andreabertolini1995/Etherscan-registration-form-testing/blob/main/videos/test.mov" type="video/mp4">
+</video>
 
 
 
