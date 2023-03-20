@@ -32,7 +32,7 @@ To run a test, follow the next steps:
 git clone https://github.com/andreabertolini1995/Etherscan-registration-form-testing.git
 ```
 
-* Be sure you have installed the packages listed in the [requirements](https://github.com/andreabertolini1995/Etherscan-registration-form-testing/blob/main/requirements.txt):
+* Be sure you have installed the packages listed in the [requirements](https://github.com/andreabertolini1995/Etherscan-registration-form-testing/blob/main/requirements.txt). [Behave](https://behave.readthedocs.io/en/stable/) is the Python implementation of the Cucumber framework:
 
 ```
 behave==1.2.6
