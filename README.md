@@ -4,8 +4,8 @@
 
 The goal of this project is to:
 * create test scenarios for the registration form on Etherscan website,
-* create End-To-End (E2E) browser tests to cover all test scenarios
-* and justify the choice of the tools that have been used for the automatic testing.
+* create End-To-End (E2E) browser tests to cover all test scenarios, and
+* justify the choice of the tools that have been used for the automatic testing.
 
 
 ## Test scenarios
