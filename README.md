@@ -4,7 +4,7 @@
 
 The goal of this project is to:
 * create test scenarios for the registration form on Etherscan website,
-* create end-to-end (E2E) browser tests to cover all test scenarios
+* create End-To-End (E2E) browser tests to cover all test scenarios
 * and justify the choice of the tools that have been used for the automatic testing.
 
 
@@ -52,7 +52,4 @@ behave --tags==conditions_not_accepted
 * Finally, the automated test doing its job:
 
 https://user-images.githubusercontent.com/51784826/226219811-ca162d36-afcb-4933-852f-c24801c34da7.mp4
-
-
-
 
