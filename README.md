@@ -36,7 +36,11 @@ To run a test, follow the next steps:
 
 * Finally, the automated test doing its job:
 
-https://user-images.githubusercontent.com/51784826/226219646-604050f8-7a08-4268-86b7-6020007479d1.mov
+
+
+
+https://user-images.githubusercontent.com/51784826/226219811-ca162d36-afcb-4933-852f-c24801c34da7.mp4
+
 
 
 
