@@ -10,12 +10,12 @@ Feature: Testing the signup feature of the Etherscan registration form
                 | password                     | Password     |
                 | password                     | Password2    |
 
-        @conditions-not-accepted
+        @conditions_not_accepted
         Scenario: User does not accept the Terms and Conditions
             And the user clicks on the "Create an Account" button
             Then the user sees an error message saying "Please accept our Terms and Conditions."
 
-        @conditions-accepted
+        @conditions_accepted
         Scenario: User accepts the Terms and Conditions
             When the user accepts the Terms and Conditions
             And the user clicks on the "Create an Account" button
