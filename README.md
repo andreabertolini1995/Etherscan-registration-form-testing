@@ -10,7 +10,7 @@ The goal of this project is to:
 
 ## Test scenarios
  
-Test scenarios or test cases are documents with steps to be completed as planned out ahead of time. The testing framework I have chosen to outline the test scenarios for this application is [Cucumber](https://cucumber.io/). Cucumber is well documented and it encourages collaboration among developers, quality assurance experts, and customer representatives in a software project through [behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development) (BDD).
+Test scenarios (or test cases) are documents with steps to be completed as planned out ahead of time. The testing framework I have chosen to outline the test scenarios for this application is [Cucumber](https://cucumber.io/). Cucumber is well documented and it encourages collaboration among developers, quality assurance experts, and customer representatives in a software project through [behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development) (BDD).
 
 <p align="center">
   <img src="https://github.com/andreabertolini1995/Etherscan-registration-form-testing/blob/main/images/cucumber_2.png" width="400" height="110" />
